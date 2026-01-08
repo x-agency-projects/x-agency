@@ -1,26 +1,66 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* Définition du thème Tailwind v4 (couleurs personnalisées) */
+@theme {
+  --color-primary-dark: #0a0a0a;
+  --color-primary: #1a1a1a;
+  --color-primary-light: #2a2a2a;
+  --color-primary-card: #121214;
+
+  --color-accent: #8536d6;
+
+  --color-neutral-offwhite: #faf9f6;
+  --color-neutral: #ffffff;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* Classes utilitaires personnalisées */
+.container-custom {
+  max-width: 80rem; /* max-w-7xl */
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem; /* px-4 */
+  padding-right: 1rem;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@media (min-width: 640px) {
+  .container-custom {
+    padding-left: 1.5rem; /* sm:px-6 */
+    padding-right: 1.5rem;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@media (min-width: 1024px) {
+  .container-custom {
+    padding-left: 2rem; /* lg:px-8 */
+    padding-right: 2rem;
+  }
+}
+
+.section-padding {
+  padding-top: 4rem; /* py-12 */
+  padding-bottom: 4rem;
+}
+
+@media (min-width: 768px) {
+  .section-padding {
+    padding-top: 4rem; /* md:py-12 */
+    padding-bottom: 4rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section-padding {
+    padding-top: 4rem; /* lg:py-12 */
+    padding-bottom: 4rem;
+  }
+}
+
+.hover-lift {
+  transition-property: transform;
+  transition-duration: 300ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hover-lift:hover {
+  transform: translateY(-0.25rem); /* -translate-y-1 */
 }
